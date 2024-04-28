@@ -106,39 +106,4 @@ bool mencari(const char* kata) {		//bool untuk fungsi true atau false deklarasi 
                 return true;
             }
         }
-    }
-
-    // Check diagonally (down-right)
-    for (int i = 0; i <= 24; i++) {						//loop luar ini berjalan melalui setiap baris dalam array matrix
-        for (int j = 0; j <= 24; j++) {					//Loop tengah ini berjalan melalui setiap kolom dalam baris saat ini dari array matrix.
-            bool ketemu = true;							//Variabel ketemu diatur ke true untuk setiap posisi baru dalam array matrix yang sedang diperiksa.
-            for (int k = 0; k < kataLen; k++) {			//Loop dalam ini berjalan melalui setiap karakter dalam string kata.
-                if (matrix[i + k][j + k] != kata[k]) {		//Jika karakter saat ini dalam string kata tidak sama dengan karakter yang sesuai dalam array matrix
-                    ketemu = false;						//maka ketemu diatur ke false dan loop dalam dihentikan.
-                    break;								//berhenti
-                }
-            }
-            if (ketemu) {								//Jika ketemu masih true setelah memeriksa semua karakter dalam string kata
-                return true;							//maka fungsi mengembalikan true, menunjukkan bahwa string kata telah ditemukan dalam array matrix.
-            }
-        }
-    }
-
-    // Check diagonally (down-left)
-    for (int i = 0; i <= 24; i++) {
-        for (int j = 0; j < 24; j++) {
-            bool ketemu = true;
-            for (int k = 0; k < kataLen; k++) {
-                if (matrix[i + k][j - k] != kata[k]) {
-                    ketemu = false;
-                    break;
-                }
-            }
-            if (ketemu) {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
+    } 
