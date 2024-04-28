@@ -151,18 +151,25 @@ int main() {
 	do{
 		
 		
-		//referensi dari buku programming with c++ halaman 131 tentang nested loop
-		for (int i = 0; i < 24; ++i) {				//loop pertama mengulang i sebanyak 23 kali dari o
-    	    for (int j = 0; j < 24; ++j) {			//loop kedua mengulang i sebanyak 23 kali dari o
-        	    cout << matrix[i][j] << " ";		//ini untuk mencetak nilai matriksnya dari char matriks diatas
-     	   }
+	//referensi dari buku programming with c++ halaman 131 tentang nested loop
+	for (int i = 0; i < 24; ++i) {				//loop pertama mengulang i sebanyak 23 kali dari o
+    		for (int j = 0; j < 24; ++j) {			//loop kedua mengulang i sebanyak 23 kali dari o
+        		cout << matrix[i][j] << " ";		//ini untuk mencetak nilai matriksnya dari char matriks diatas
+     	  	 }
   	      cout <<endl;
  	   }
  	   
     	cout << "masukkan banyak kata yang dicari : ";		//output untuk menampilakak kata di cmd
- 	    int num;											//deklarasi variable num
-  	  	cin >> num;											//untuk memasukkan inputan cmd ke num, Nilai tersebut kemudian dibaca ke dalam variabel num.
-  	  	cin.ignore(); 										//menghapus buffer input.
+ 	int num;											//deklarasi variable num
+  	cin >> num;											//untuk memasukkan inputan cmd ke num, Nilai tersebut kemudian dibaca ke dalam variabel num.
+  	cin.ignore(); 										//menghapus buffer input.
+
+	char words[num][25]; 								//array yang dideklarasikan untuk menyimpan kata-kata.
+
+  	for (int i = 0; i < num; i++) {						//melooping dari 0 hingga num(banyak inputan yang diisi sebelumnya di cmd)
+ 	   	cout << "kata ke-"<<i+1<<" : ";						//menampilkan kata ke- sebanyak i+1 di cmd
+ 		cin.getline(words[i], 25);						//membaca satu baris input dari pengguna keladam array word[i] dengan karakter maksimum sebanyak 25
+  		kapital(words[i]); 
 	}
 	while(lagi == 'y');							//jika nilai lagi adalah 'y', maka akan mengulagn perintah dari awal
 	cin.get();							//digunakan untuk membaca satu karakter tambahan (biasanya karakter newline) dari aliran masukan
