@@ -171,6 +171,15 @@ int main() {
  		cin.getline(words[i], 25);						//membaca satu baris input dari pengguna keladam array word[i] dengan karakter maksimum sebanyak 25
   		kapital(words[i]); 
 	}
+	for (int i = 0; i < num; i++) {						//melooping i sebanyak num dari 0
+  	      if (mencari(words[i])) {							//menggunakan struktur kondisional dan memeriksa kata word[i] dengan emmanggil fungsi bool mencari
+   	         cout << "kata ke-"<<i+1<<" : Ada" << endl;		//jika kata ditemukan, program akan mecetak "Ada"
+   	     } else {
+  	          cout << "kata ke-"<<i+1<<" : Tidak Ada" << endl;  //Jika tidak ditemukan, program mencetak “Tidak Ada”.
+  	      }
+  	  }
+	}
+		
 	while(lagi == 'y');							//jika nilai lagi adalah 'y', maka akan mengulagn perintah dari awal
 	cin.get();							//digunakan untuk membaca satu karakter tambahan (biasanya karakter newline) dari aliran masukan
 
