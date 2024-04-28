@@ -118,7 +118,7 @@ bool mencari(const char* kata) {		//bool untuk fungsi true atau false deklarasi 
                 }
             }
             if (ketemu) {								//Jika ketemu masih true setelah memeriksa semua karakter dalam string kata
-                retun true;							//maka fungsi mengembalikan true, menunjukkan bahwa string kata telah ditemukan dalam array matrix.
+                return true;							//maka fungsi mengembalikan true, menunjukkan bahwa string kata telah ditemukan dalam array matrix.
             }
         }
     }
@@ -126,7 +126,7 @@ bool mencari(const char* kata) {		//bool untuk fungsi true atau false deklarasi 
     // Check diagonally (down-left)
     for (int i = 0; i <= 24; i++) {
         for (int j = 0; j < 24; j++) {
-            bool ketemu = true:
+            bool ketemu = true;
             for (int k = 0; k < kataLen; k++) {
                 if (matrix[i + k][j - k] != kata[k]) {
                     ketemu = false;
