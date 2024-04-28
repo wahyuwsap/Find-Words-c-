@@ -141,3 +141,31 @@ bool mencari(const char* kata) {		//bool untuk fungsi true atau false deklarasi 
 
     return false;
 }
+
+int main() {
+	
+	char lagi = 'y'; 	//Mendeklarasikan variabel karakter bernama lagi dan menginisialisasinya dengan nilai 'y' igunakan untuk mengontrol perulangan yang mengulang program.
+	
+	//menggunakan do agar bisa diulang tanpa keluar dari cmd
+	// referensi dari buku programing with c++ halaman 124 tentang do while.
+	do{
+		
+		
+		//referensi dari buku programming with c++ halaman 131 tentang nested loop
+		for (int i = 0; i < 24; ++i) {				//loop pertama mengulang i sebanyak 23 kali dari o
+    	    for (int j = 0; j < 24; ++j) {			//loop kedua mengulang i sebanyak 23 kali dari o
+        	    cout << matrix[i][j] << " ";		//ini untuk mencetak nilai matriksnya dari char matriks diatas
+     	   }
+  	      cout <<endl;
+ 	   }
+ 	   
+    	cout << "masukkan banyak kata yang dicari : ";		//output untuk menampilakak kata di cmd
+ 	    int num;											//deklarasi variable num
+  	  	cin >> num;											//untuk memasukkan inputan cmd ke num, Nilai tersebut kemudian dibaca ke dalam variabel num.
+  	  	cin.ignore(); 										//menghapus buffer input.
+	}
+	while(lagi == 'y');							//jika nilai lagi adalah 'y', maka akan mengulagn perintah dari awal
+	cin.get();							//digunakan untuk membaca satu karakter tambahan (biasanya karakter newline) dari aliran masukan
+
+    return 0;
+}
