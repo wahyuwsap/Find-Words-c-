@@ -44,7 +44,7 @@ bool mencari(const char* kata) {		//bool untuk fungsi true atau false deklarasi 
 
 
 	//referensi ini berasal dari GPT
-    // Check horizontally
+    // Check horizontally dari kiri ke kanan
     for (int i = 0; i < 24; i++) {						//loop luar ini berjalan melalui setiap baris dalam array matrix
         for (int j = 0; j <= 24; j++) {					//Loop tengah ini berjalan melalui setiap kolom dalam baris saat ini dari array matrix.
             bool ketemu = true;							//Variabel ketemu diatur ke true untuk setiap posisi baru dalam array matrix yang sedang diperiksa.
@@ -59,13 +59,45 @@ bool mencari(const char* kata) {		//bool untuk fungsi true atau false deklarasi 
             }
         }
     }
+    
+    // Check horizontal kanan ke kiri
+    for (int i = 0; i <= 24; i++) {
+        for (int j = 0; j < 24; j++) {
+            bool ketemu = true;
+            for (int k = 0; k < kataLen; k++) {
+                if (matrix[i][j - k] != kata[k]) {
+                    ketemu = false;
+                    break;
+                }
+            }
+            if (ketemu) {
+                return true;
+            }
+        }
+    }
 
-    // Check vertically
+    // Check vertically atas ke bawah
     for (int i = 0; i <= 24; i++) {
         for (int j = 0; j < 24; j++) {
             bool ketemu = true;
             for (int k = 0; k < kataLen; k++) {
                 if (matrix[i + k][j] != kata[k]) {
+                    ketemu = false;
+                    break;
+                }
+            }
+            if (ketemu) {
+                return true;
+            }
+        }
+    }
+    
+    // Check vertically bawah ke atas
+    for (int i = 0; i <= 24; i++) {
+        for (int j = 0; j < 24; j++) {
+            bool ketemu = true;
+            for (int k = 0; k < kataLen; k++) {
+                if (matrix[i - k][j] != kata[k]) {
                     ketemu = false;
                     break;
                 }
